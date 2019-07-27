@@ -1,0 +1,48 @@
+@import '../../styles/styles.scss';
+
+.imgur-Home {
+  flex-grow: 1;
+  padding: $spacingMd $spacingMd 0;
+
+  @include md {
+    padding: $spacingLg $spacingLg 0;
+  }
+
+  @include md {
+    max-width: $containerMaxWidthLg;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    margin-bottom: $spacingMd;
+
+    @include sm {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: $spacingLg;
+    }
+  }
+
+  &__sidebar {
+    position: relative;
+  }
+
+  &__results {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__resultCount {
+    @include sm {
+      font-size: $fontSizeMd;
+    }
+  }
+
+  &__select {
+    @include md {
+      width: $inputMaxWidth;
+    }
+  }
+}

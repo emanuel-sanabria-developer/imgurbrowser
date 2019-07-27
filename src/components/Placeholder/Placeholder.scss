@@ -1,0 +1,33 @@
+@import '../../styles/styles.scss';
+
+@keyframes placeholderAnimation {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.imgur-Placeholder {
+  margin-bottom: $spacingMd;
+
+  @include listGrid();
+
+  &__item {
+    height: $itemImageHeight;
+    margin-bottom: $spacingMd;
+    background-color: $itemBackgroundColor;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    animation: placeholderAnimation 2s infinite linear;
+    background: linear-gradient(
+      to right,
+      $itemBackgroundColor 4%,
+      darken($itemBackgroundColor, 1) 25%,
+      darken($itemBackgroundColor, 2) 36%
+    );
+    background-size: 1000px 100%;
+  }
+}

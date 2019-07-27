@@ -1,0 +1,32 @@
+@import '../../../styles/styles.scss';
+
+.imgur-NavFilter {
+  display: flex;
+  margin-bottom: $spacingMd;
+  max-width: 800px;
+
+  @include md {
+    margin-bottom: $spacingLg;
+  }
+
+  &__checkbox,
+  &__select {
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-shrink: 0;
+  }
+
+  &__checkbox {
+    margin-left: $spacingMd;
+
+    input {
+      margin-right: $spacingSm;
+    }
+  }
+
+  &__select {
+    & + & {
+      margin-left: $spacingMd;
+    }
+  }
+}

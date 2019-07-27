@@ -1,0 +1,13 @@
+@import '../../styles/styles';
+
+.imgur-NotFound {
+  width: 100%;
+  max-width: $containerMaxWidthMd;
+  text-align: center;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

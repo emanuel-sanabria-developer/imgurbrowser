@@ -1,0 +1,24 @@
+@import '../../styles/styles.scss';
+
+.imgur-Details {
+  flex-grow: 1;
+  @include container;
+
+  &__image {
+    width: 100%;
+    margin-bottom: $spacingMd;
+  }
+
+  &__detailsContainer {
+    margin-right: $spacingLg;
+    margin-bottom: $spacingLg;
+
+    span + span {
+      margin-left: $spacingSm;
+    }
+  }
+
+  &__description {
+    @include clampText();
+  }
+}

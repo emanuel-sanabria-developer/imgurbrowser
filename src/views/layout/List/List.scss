@@ -1,0 +1,80 @@
+@import '../../../styles/styles.scss';
+
+.imgur-List {
+  margin-bottom: $spacingLg;
+
+  @include listGrid();
+
+  &__title {
+    @include clampText();
+  }
+
+  &__item {
+    background-color: $itemBackgroundColor;
+    color: $textColor;
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    position: relative;
+    box-shadow: 0 3px 5px -3px $boxShadow;
+
+    &:active {
+      transform: scale(0.99);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: transparentize($textColor, 0.8);
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 100ms ease-in-out;
+    }
+
+    &:hover {
+      box-shadow: none;
+
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__details {
+    padding: $spacingSm $spacingMd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-grow: 1;
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__imgWrapper {
+    width: 100%;
+    height: $itemImageHeight;
+    position: relative;
+  }
+
+  &__imgContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
